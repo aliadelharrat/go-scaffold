@@ -1,0 +1,32 @@
+go.sum
+
+Example `.gitignore`:
+```
+# Binaries
+project-name
+*.exe
+
+# Temporary files
+*.tmp
+*.swp
+
+# Dependencies
+vendor/
+
+# Test and coverage
+*.test
+*.out
+coverage/
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Logs and caches
+*.log
+.cache/
+
+# Environment
+.env
+*.local
+```
