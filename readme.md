@@ -9,8 +9,8 @@ A Go CLI tool to create a new Go project with a valid name (starts with a letter
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/aliadelharrat/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/aliadelharrat/go-scaffold
+   cd go-scaffold
    ```
 
 2. Build the project:
