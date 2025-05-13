@@ -96,6 +96,6 @@ func isValidString(s string) bool {
 		return false
 	}
 	// Check if string starts with a letter and contains only letters, numbers, underscores
-	matched, _ := regexp.MatchString(`^[a-zA-Z][a-zA-Z0-9_]*$`, s)
+	matched, _ := regexp.MatchString(`^[a-zA-Z][a-zA-Z0-9_-]*$`, s)
 	return matched
 }
