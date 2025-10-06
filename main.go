@@ -24,6 +24,21 @@ var modfileContent = `module github.com/aliadelharrat/%FOLDER_NAME%
 go 1.24.3
 `
 
+var makefileContent = `
+.DEFAULT_GOAL := build
+
+.PHONY:clean fmt vet build
+
+clean:
+	go clean
+fmt: clean
+	go fmt ./...
+vet: fmt
+	go vet ./...
+build: vet
+	go build -o main
+`
+
 var fileName = "main.go"
 
 func main() {
@@ -81,6 +96,13 @@ func main() {
 	)
 	err = os.WriteFile(modFilePath, []byte(modfileContent), 0644)
 	check(err)
+
+	// Create makefile file
+	makefilePath := filepath.Join(folderPath, "makefile")
+	f, err = os.Create(makefilePath)
+	check(err)
+	defer f.Close()
+	err = os.WriteFile(makefilePath, []byte(makefileContent), 0644)
 }
 
 // Handle and log error
